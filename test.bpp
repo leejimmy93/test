@@ -1,0 +1,14 @@
+DATA=test
+input.file=$(DATA).maf.gz
+input.file.compression=gzip
+input.format=Maf
+output.log=$(DATA).maffilter.log
+maf.filter=\
+    LiftOver(                               \
+        ref_species=B73,               \
+        target_species=Mo17,            \
+        target_closest_position=no,        \
+        feature.file=test.gff3,      \
+        feature.format=GFF,                 \
+        file=$(DATA).tln,                \
+        compression=gzip)
